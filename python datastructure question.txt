@@ -1,0 +1,88 @@
+1.Create a Singly Linked list class (members-> value and next pointer), with the following methods:è
+createNewNode()
+addNodeAtBegin()
+addNodeAtEnd()
+length()
+print()
+
+2.Create a method to search an element in the above created linked list
+
+
+
+code 
+
+
+class node:
+    def __init__(self, data):
+        self.data =data
+        self.next=None
+class Linkedlist:
+    def __init__(self):
+        self.start= None
+
+    # insert at the begning
+    def insertbeg(self):
+        value = int(input("enter the data you want to insert"))
+        newnode = node(value)
+        newnode.next=self.start
+        self.start=newnode
+
+        # insert node at end
+    def insertatlast(self):
+        val =int(input("enter the data you want to inesrt0"))
+        newwnode =node(val)
+        if(self.start == None):
+            self.start=newwnode
+        else:
+            temp=self.start
+            while(temp.next!=None):
+                temp=temp.next
+            temp.next=newwnode
+
+    def srarch(self):
+        valv=int(input("enter element"))
+        if (self.start==None):
+            print("list is empty")
+        else:
+            temp=self.start
+            while(temp.next!=None):
+                if(temp.data==valv):
+                    print("true")
+                    break
+                else:
+                    temp=temp.next
+
+
+
+
+    # view whole list
+
+    def view(self):
+        if(self.start == None):
+            print("list is empty")
+        else:
+            count=0
+            temp=self.start
+            while (temp!=None):
+                print(temp.data,end =" ")
+                temp=temp.next
+                count=count+1
+            print( )
+            print(count)
+
+
+
+
+list =Linkedlist()
+list.insertbeg()
+list.insertbeg()
+list.insertbeg()
+list.insertbeg()
+list.insertbeg()
+list.insertbeg()
+
+
+list.view()
+list.insertatlast()
+list.view()
+list.srarch()
