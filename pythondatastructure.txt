@@ -27,6 +27,28 @@ class Linkedlist:
             while temp!=None:
                 print(temp.data, end=' ')
                 temp=temp.next
+
+
+    def deletegivennode(self):
+        value = int(input("enter the node you wani to delete"))
+        temp=self.start
+
+        if (temp!=None):
+            if (temp.data == value):
+                self.start = temp.next
+                temp = None
+                return
+        while(temp!=None):
+            if(temp.data==value):
+                break
+            prev=temp
+            temp =temp.next
+        if(temp == None):
+            return
+        prev.next=temp.next
+        temp = None
+
+
     def deleteposition(self):
         position = int(input("enter position"))
         temp = self.start
@@ -46,9 +68,18 @@ mylist.insertlast(10)
 mylist.insertlast(20)
 mylist.insertlast(50)
 mylist.insertlast(55)
+mylist.insertlast(60)
+mylist.insertlast(65)
+mylist.insertlast(70)
+mylist.insertlast(75)
+mylist.insertlast(80)
+
+
 mylist.view()
 print()
 mylist.deletefirst()
 mylist.view()
 mylist.deleteposition()
+mylist.view()
+mylist.deletegivennode()
 mylist.view()
